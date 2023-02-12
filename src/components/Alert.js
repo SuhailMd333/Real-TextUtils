@@ -11,16 +11,16 @@ const Capitalize  = (word) => {
 
 
   return (
-    props.alert &&
-    <div> 
-
-      
+   
+    
+    <div style={{height:'50px'}}>
+                  {  props.alert &&
                  <div className={`alert alert-${props.alert.type}`}role="alert">
 
-
-                        <strong>  { Capitalize(props.alert.type)} : {props.alert.msg} </strong> 
- 
-                    </div>
+                 <strong>  { Capitalize(props.alert.type)} : {props.alert.msg} </strong> 
+                 </div>
+                 }
     </div>
+            
   )
 }

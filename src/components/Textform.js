@@ -63,22 +63,22 @@ function handleOnChange(event){
 </div>
 <div className="container">
    {/* container of buttons  */}
-<button type="button" onClick={handleUpclick}  className={`btn btn-${props.mode==='light'?'dark':'primary' }`}>Change to Upper</button>
+<button type="button" disabled={text.length===0} onClick={handleUpclick}  className={`btn btn-${props.mode==='light'?'dark':'primary' }`}>Change to Upper</button>
 
-<button type="button" onClick={handleLoClick} className={`mx-2 btn btn-${props.mode==='light'?'dark':'primary' }`}>Change To Lower</button>
+<button type="button" disabled={text.length===0} onClick={handleLoClick} className={`mx-2 my-1  btn btn-${props.mode==='light'?'dark':'primary' }`}>Change To Lower</button>
 
-<button type="button" className={`mx-2 btn btn-${props.mode==='light'?'dark':'primary' }`} onClick={handleClearClick}>Clear Text</button>
+<button type="button" disabled={text.length===0} className={`mx-2  my-2 btn btn-${props.mode==='light'?'dark':'primary' }`} onClick={handleClearClick}>Clear Text</button>
 
-<button type="button" className={`mx-2 btn btn-${props.mode==='light'?'dark':'primary' }`} onClick={handleCopyText} >Copy Text </button>
+<button type="button" disabled={text.length===0} className={`mx-2 my-2 btn btn-${props.mode==='light'?'dark':'primary' }`} onClick={handleCopyText} >Copy Text </button>
 
-<button type="button" className={`mx-2 btn btn-${props.mode==='light'?'dark':'primary' }`} onClick={handleRemoveSpace}>Remove Extra Space</button>
+<button type="button" disabled={text.length===0} className={`mx-2 my-2  btn btn-${props.mode==='light'?'dark':'primary' }`} onClick={handleRemoveSpace}>Remove Extra Space</button>
 
 
 </div>
 {/* container of  summarry  */}
 <div className="container">
   <h3 className="summary my-3"> Your text summary</h3>
-  <p className="sum"> you typed {text.split(" ").length-1} Words and {text.length} Charaters</p>
+  <p className="sum"> you typed {text.split(" ").filter((element) =>{return element.length!==0}).length} Words and {text.length} Charaters</p>
   <p> {0.008 * text.split(" ").length} Minutes to read</p>
   <h3> Preview </h3>
   <p> { text.length>0 ? text :'Please Enter The Text To Preveiw '}</p>

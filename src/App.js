@@ -1,16 +1,16 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Textform from './components/Textform';
-// import About from "./components/About";
+import About from "./components/About";
 import React,{useState} from "react";
 import Alert from "./components/Alert";
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route,
-//   Link
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
 
-// } from 'react-router-dom';
+
+} from 'react-router-dom';
 
 function App() {
 // Function to set Alert Type and message
@@ -49,7 +49,7 @@ setAlert(null)
 const [mode,setMode] = useState('light')
 
   return (
-    // <Router>
+    <Router>
       
       <div>
       
@@ -66,23 +66,23 @@ const [mode,setMode] = useState('light')
       <div className="conatiner my-3">
      
 
-      {/* <Switch>
+      <Switch>
        
         <Route exact path="/about" >
         <div className="container">
-        <About />
+        <About mode={mode}/>
         </div>
-        {/* </Route> */}
-        
-        {/* <Route  exact path="/"> */} */
+       </Route>
+      
+        <Route  exact path="/"> 
         <Textform mode={mode} showAlert={showAlert} />
-        {/* </Route>
-      </Switch> */}
+        </Route>
+      </Switch>
       </div>
       
     </div>
     
-    // </Router>
+    </Router>
   );
 }
 

@@ -1,39 +1,13 @@
 import React,{useState} from "react";
 
 
-export default function About() {
-// This function works to change darkmode
-  const  toggleMode = ()=>{
-   if(myStyle.color === 'black'){
-    setmyStyle({
-      backgroundColor:'black',
-      color:'white',
-      border :'1px solid white'
-    }) 
-     }
-     else{
-      setmyStyle({
-        backgroundColor:'White',
-        color:'black'
-      })
-     }
-     if(button==='Enable Dark Mode'){
-      setMyButton('Enable Light Mode')
-     }else{
-      setMyButton('Enable Dark Mode')
-     }
+export default function About(props) {
+let myStyle = {
+  color: props.mode === 'dark'?'#d1d1d1':'black',
+  backgroundColor: props.mode === 'dark'?'#425c76':'white'
+}
+  
 
-  } 
-
-
-// This  State is used to change the state of button 
-const [button,setMyButton] = useState('Enable Dark Mode')
-
-  // use State define to change bg color
-  const [myStyle,setmyStyle] = useState({
-    backgroundColor:'White',
-    color:'black'
-  })
   
 
 
@@ -53,7 +27,7 @@ const [button,setMyButton] = useState('Enable Dark Mode')
                 aria-expanded="true"
                 aria-controls="collapseOne"
               >
-                Accordion Item #1 c
+               Want to know our favorite part about his page? Why we created it?
               </button>
             </h2>
             <div
@@ -64,15 +38,7 @@ const [button,setMyButton] = useState('Enable Dark Mode')
               style={myStyle}
             >
               <div className="accordion-body"  style={myStyle}>
-                <strong>This is the first item's accordion body.</strong> It is
-                shown by default, until the collapse plugin adds the appropriate
-                classNamees that we use to style each element. These classNamees
-                control the overall appearance, as well as the showing and
-                hiding via CSS transitions. You can modify any of this with
-                custom CSS or overriding our default variables. It's also worth
-                noting that just about any HTML can go within the{" "}
-                <code>.accordion-body</code>, though the transition does limit
-                overflow.
+                <strong> Text-Utils.com was born in 2014 as part of a learning exercise to practice our programming skills. In almost 10 years of existence, we continue to refactor, redesign, improve, and implement new features. And we could say that we learned a lot since we started, by including the experience here and in the overall development world. As long our spirit allows us to continue learning and coding, we will continue improving this website</strong>
               </div>
             </div>
           </div>
@@ -87,7 +53,7 @@ const [button,setMyButton] = useState('Enable Dark Mode')
                 aria-expanded="false"
                 aria-controls="collapseTwo"
               >
-                Accordion Item #2
+          What does it do?
               </button>
             </h2>
             <div
@@ -98,15 +64,7 @@ const [button,setMyButton] = useState('Enable Dark Mode')
               data-bs-parent="#accordionExample"
             >
               <div className="accordion-body"  style={myStyle}>
-                <strong>This is the second item's accordion body.</strong> It is
-                hidden by default, until the collapse plugin adds the
-                appropriate classNamees that we use to style each element. These
-                classNamees control the overall appearance, as well as the
-                showing and hiding via CSS transitions. You can modify any of
-                this with custom CSS or overriding our default variables. It's
-                also worth noting that just about any HTML can go within the{" "}
-                <code>.accordion-body</code>, though the transition does limit
-                overflow.
+                <strong>Text-Utils.com is described as a central repository of tools for helping with developer activities. It includes tools such as for formatting JSON, XML, HTML, CSS, JavaScript, multiple text tools such as to convert case, remove accents, line breaks, extra space, also regular expressions tools for extracting elements from text such as IPs and e-mail addresses. And this is actually only a subset of what we have.</strong>
               </div>
             </div>
           </div>
@@ -120,7 +78,7 @@ const [button,setMyButton] = useState('Enable Dark Mode')
                 aria-expanded="false"
                 aria-controls="collapseThree"
               >
-                Accordion Item #3
+                Why is it different?
               </button>
             </h2>
             <div
@@ -131,23 +89,14 @@ const [button,setMyButton] = useState('Enable Dark Mode')
               data-bs-parent="#accordionExample"
             >
               <div className="accordion-body"  style={myStyle}>
-                <strong>This is the third item's accordion body.</strong> It is
-                hidden by default, until the collapse plugin adds the
-                appropriate classNamees that we use to style each element. These
-                classNamees control the overall appearance, as well as the
-                showing and hiding via CSS transitions. You can modify any of
-                this with custom CSS or overriding our default variables. It's
-                also worth noting that just about any HTML can go within the{" "}
-                <code>.accordion-body</code>, though the transition does limit
-                overflow.
+                <strong>Fast, secure and easy. This is a summary of what Text-Utils.com is. All we design is intended to be fast, really fast. Other than that, all our utilities are client-side, meaning your data will not go through our servers to be processed. Your data is secure. Finally, Text-Utils.com is also quite easy. Everything can be found on the page very quickly, in just a few clicks.</strong>
+                
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="container my-4">
-      <button type="button" onClick={toggleMode} className="btn btn-primary">{button}</button>
-      </div>
+    
     </div>
   );
 }
